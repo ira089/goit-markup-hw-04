@@ -374,3 +374,15 @@ img {
   color: var(--white, #fff);
   border: 1px solid transparent;
 }
+/*========customers==================*/
+.customers {
+  margin-top: 143px;
+}
+.logo-customers {
+  /*padding-top: 64px;*/
+  display: inline-flex;
+  height: 77.88px;
+  align-items: flex-start;
+  gap: 24px;
+  flex-shrink: 0;
+}
