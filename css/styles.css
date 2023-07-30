@@ -7,7 +7,8 @@
   --white: #fff;
   --slate: #434455;
   --cloud: #f4f4fd;
-  --ocean: #404bbf;
+  --dairy: #fcfcfc;
+  --cornflower: #e7e9fc;
 }
 .visually-hidden {
   position: absolute;
@@ -131,22 +132,15 @@ img {
   color: var(--ocean, #404bbf);
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
+  display: block;
+  /* margin-bottom: 20px;*/
 }
 .link-logo:hover,
 .link-logo:focus {
   color: var(--ocean, #404bbf);
 }
-/*.link-logo:hover::before {
-  content: "";
-  width: 67px;
-  height: 4px;
-  border-radius: 2px;
-  background: var(--ocean, #404bbf);
-  position: absolute;
 
-  top: 69px;
-  
-}*/
 .add-list {
   display: flex;
   gap: 40px;
@@ -167,14 +161,15 @@ img {
 .address:focus {
   color: var(--ocean, #404bbf);
 }
-.current::before {
+.current::after {
   content: "";
-  width: 67px;
+  width: 100%;
   height: 4px;
   border-radius: 2px;
   background: var(--ocean, #404bbf);
   position: absolute;
-  top: 69px;
+  margin-top: 45px;
+  left: 0;
 }
 /*================================================================*/
 .section-effect {
@@ -501,11 +496,12 @@ img {
 
   gap: 24px;
   flex-shrink: 0;
-  /*align-content: center;*/
 }
 .customers-icon {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, auto, 0.25));
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #8e8f99;
+
+  /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 .link-customers {
   width: 168px;
@@ -515,11 +511,77 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--lightslate);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-customers:hover .customers-icon {
-  fill: #404bbf;
+  /*fill: var(--ocean);
+  border-color: var(--ocean);
+  background-color: var(--ocean);
+   border-color: var(--ocean);
+  color: var(--ocean);*/
 }
-
-/*.customers-items {
-  margin: 0 auto;
-}*/
+.link-customers:hover .customers-icon {
+  border-color: var(--ocean);
+  color: var(--ocean);
+}
+/*========modal==================*/
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  min-height: 584px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--dairy, #fcfcfc);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transition: transform 250ms linear;
+}
+.modal-btn {
+  position: absolute;
+  display: flex;
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  background-color: var(--cornflower);
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--ocean);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn:hover {
+  background-color: var(--ocean);
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(50%, 50%) scaleY(1.5) rotate(90deg);
+}
+.modal-btn-icon {
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.1);
+  fill: rgba(0, 0, 0, 0.1);
+}
+.modal-btn:hover .modal-btn-icon {
+  stroke: white;
+  background-color: var(--ocean);
+}

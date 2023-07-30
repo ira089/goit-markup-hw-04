@@ -51,7 +51,7 @@
       <section class="section-effect">
         <div class="container">
           <h1 class="effect-title">Effective Solutions for Your Business</h1>
-          <button class="effect-button" type="button">Order Service</button>
+          <button class="effect-button" data-modal-open type="button">Order Service</button>
         </div>
       </section>
       <section class="section-strategy">
@@ -109,7 +109,7 @@
           </ul>
         </div>
       </section>
-      <section class="section-doing">
+      <section class="section-doing"> 
         <div class="container">
           <h2 class="title-two">What are we doing</h2>
           <ul class="list doing-list">
@@ -312,7 +312,7 @@
           <h2 class="title-two">Customers</h2>
           <ul class="list logo-customers">
             <li class="customers-items">
-              <a class="link link-customers" href="" target="_blank">
+              <a class="link link-customers" href="#" target="_blank"> 
                 <svg class="customers-icon" width="104" height="56">
                   <use href="./images/icons.svg#icon-Logo"></use>
                 </svg>
@@ -403,5 +403,13 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" data-modal-close type="button"><svg class="modal-btn-icon" width="8" height="8">
+          <use href="./images/icons.svg#icon-close-black-18dp"></use>
+        </svg></button>
+      </div>
+    </div> 
+    <script src="./js/modal.js"></script> 
   </body>
 </html>
