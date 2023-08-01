@@ -569,8 +569,12 @@ img {
   color: #404bbf;
 }
 .link-customers:hover .customers-icon {
-  /*border-color: var(--ocean);
+  /* fill: #404bbf;
+  border-color: var(--ocean);
   color: var(--ocean);*/
+}
+.link-customers:hover .customers-icon path {
+  fill: #404bbf;
 }
 /*========modal==================*/
 .backdrop {
